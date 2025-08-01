@@ -1,0 +1,180 @@
+/* src/styles/footer/ContactModal.css */
+
+.modal-overlay {
+    position: fixed; /* Fijo en la ventana, no en el flujo del documento */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ancho completo del viewport */
+    height: 100vh; /* Alto completo del viewport */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque opcional */
+    animation: fadeIn 0.3s ease-out; /* Animación de aparición */
+}
+
+.modal-content {
+    position: relative; /* Para posicionar el botón de cerrar */
+    background-color: #22262b; /* Un color oscuro para el modal, coherente con las tarjetas */
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    width: 90%;
+    max-width: 450px; /* Ancho máximo para el modal */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: scaleIn 0.3s ease-out; /* Animación de escala */
+    color: #f5f5f5; /* Color de texto claro */
+    font-family: 'Hack Nerd Font', monospace;
+}
+
+.close-modal-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 2.2em; /* Tamaño grande para la 'x' */
+    color: #f5f5f5;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1; /* Ajusta la altura de línea para centrar la 'x' */
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.close-modal-button:hover {
+    color: rgb(241, 187, 10); /* Color de acento al pasar el mouse */
+    transform: rotate(90deg); /* Pequeña animación al cerrar */
+}
+
+.modal-title {
+    font-size: 1.8em;
+    color: rgb(241, 187, 10);
+    margin-bottom: 20px;
+}
+
+.contact-label {
+    font-size: 1em;
+    color: #cccccc;
+    margin-bottom: 8px;
+}
+
+.contact-value-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #30363c; /* Fondo para el valor de contacto */
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    overflow-wrap: break-word; /* Rompe palabras largas si es necesario */
+}
+
+.contact-value-display {
+    flex-grow: 1; /* Permite que el texto ocupe el espacio disponible */
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #f5f5f5;
+    /* Evita que el texto sea seleccionable o copiable directamente con el mouse */
+    user-select: none; 
+    -webkit-user-select: none; /* Para Safari */
+    -moz-user-select: none;    /* Para Firefox */
+    -ms-user-select: none;     /* Para Internet Explorer/Edge */
+}
+
+.copy-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.copy-button:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.copy-icon {
+    width: 25px; /* Tamaño del icono de copiar */
+    height: 25px;
+    filter: invert(1); /* Hace el icono blanco si es negro por defecto */
+}
+
+
+/* --- Estilos para los botones (copiados de tu ejemplo) --- */
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px; /* Ajustado para el modal */
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%; /* Para que los botones se adapten al ancho del modal */
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Hack Nerd Font', monospace;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0; /* Evita que los botones se encojan en demasía */
+}
+
+.primary-button {
+    background-color: rgb(241, 187, 10);
+    color: #1a1a1a;
+    border: none;
+}
+
+.primary-button:hover {
+    background-color: rgb(255, 200, 50);
+    transform: translateY(-2px);
+}
+
+/* Animaciones del modal */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Media Queries para responsividad del modal */
+@media (max-width: 600px) {
+    .modal-content {
+        padding: 20px;
+        max-width: 320px;
+    }
+    .modal-title {
+        font-size: 1.5em;
+    }
+    .contact-value-display {
+        font-size: 1em;
+    }
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .close-modal-button {
+        font-size: 1.8em;
+    }
+}

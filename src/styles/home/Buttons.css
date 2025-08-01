@@ -1,0 +1,45 @@
+.cta-buttons {
+  justify-content: flex-start; /* Alinea los botones al inicio del contenedor */
+  align-items: flex-start;
+  display: flex;
+  width: 100%;
+  gap: 20px; /* Espacio entre los botones */
+  margin-top: 30px; /* Margen superior para separarlos del párrafo */
+  flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas pequeñas */
+  
+}
+
+.button {
+  display: inline-block; /* Para que padding y width funcionen como un bloque pero sigan el flujo de texto */
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+  font-family: 'Hack Nerd Font', monospace;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves para hover */
+}
+
+.primary-button {
+  background-color: rgb(241, 187, 10); /* Color principal*/
+  color: #1a1a1a; /* Texto oscuro para contrastar */
+  border: none;
+}
+
+.primary-button:hover {
+  background-color: rgb(255, 200, 50); /* Un poco más claro al pasar el ratón */
+  transform: translateY(-2px); /* Pequeño efecto de levantamiento */
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: rgb(241, 187, 10); /* Mismo color que el primario para el texto */
+  border: 2px solid rgb(241, 187, 10); /* Borde con el color principal */
+}
+
+.secondary-button:hover {
+  background-color: rgb(241, 187, 10); /* Fondo con el color principal */
+  color: #1a1a1a; /* Texto oscuro */
+  transform: translateY(-2px);
+}

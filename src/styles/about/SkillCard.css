@@ -1,0 +1,128 @@
+/* src/styles/SkillCard.css */
+
+.skill-card {
+    background-color: #444;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Sigue siendo columna para apilar header y descripción */
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    min-height: 80px; /* Altura mínima ajustada para el layout horizontal */
+    position: relative;
+    overflow: hidden; /* Importante para la animación de despliegue */
+    text-align: center; /* Centra el texto por defecto */
+    
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    background-color: #555;
+}
+
+/* Nuevo contenedor para el logo, nombre y flecha */
+.skill-card-header {
+    display: flex; /* Flexbox para layout horizontal */
+    align-items: center; /* Alinea verticalmente los ítems */
+    justify-content: center; /* Centra horizontalmente si hay espacio extra */
+    width: 100%; /* Ocupa todo el ancho de la tarjeta */
+    padding-bottom: 5px; /* Pequeño espacio debajo del header */
+    box-sizing: border-box; /* Incluye padding en el width */
+    flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
+}
+
+.skill-logo {
+    width: 40px; /* Tamaño del logo un poco más pequeño */
+    height: 40px;
+    object-fit: contain;
+    margin-right: 10px; /* Espacio entre logo y nombre */
+    flex-shrink: 0; /* Evita que el logo se encoja */
+}
+
+.skill-name {
+    font-family: 'Hack Nerd Font', monospace;
+    font-size: 1em;
+    color: rgb(241, 187, 10);
+    margin: 0;
+    flex-grow: 1; /* Permite que el nombre ocupe el espacio restante */
+    text-align: left; /* Alinea el nombre a la izquierda */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Estilos de la flecha */
+.skill-toggle-arrow {
+    font-size: 0.9em; /* Tamaño de la flecha */
+    color: rgb(241, 187, 10);
+    margin-left: 10px; /* Espacio entre el nombre y la flecha */
+    transition: transform 0.3s ease; /* Transición para la rotación */
+    flex-shrink: 0; /* Evita que la flecha se encoja */
+}
+
+/* Estado de la flecha cuando la tarjeta está activa (desplegada) */
+.skill-card.active .skill-toggle-arrow {
+    transform: rotate(90deg); /* Rota la flecha para que apunte hacia abajo (originalmente derecha) */
+    /* Si tu flecha inicial es ">", 90deg la hará apuntar abajo.
+       Si tu flecha inicial es un triángulo hacia la derecha (&#x25B6;), 90deg la hará apuntar hacia abajo.
+       Si quieres que la flecha apunte hacia abajo (originalmente) y luego hacia arriba, ajusta los grados.
+       Por ejemplo, para '>': normal: 0deg, activa: 90deg.
+       Para 'v' (hacia abajo): normal: 0deg, activa: 180deg (o -180deg)
+    */
+}
+
+
+.skill-description {
+    font-family: 'Hack Nerd Font', monospace;
+    font-size: 0.9em;
+    color: #e0e0e0;
+    margin-top: 15px; /* Espacio entre el header y la descripción */
+    padding: 0 5px;
+    text-align: center; /* Justifica el texto para mejor lectura */
+    line-height: 1.4;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s ease-out;
+    width: 100%;
+    box-sizing: border-box; /* Incluye padding en el width */
+}
+
+/* Estado activo: cuando la descripción debe mostrarse */
+.skill-card.active {
+    min-height: auto;
+    padding-bottom: 20px; /* Más espacio al final cuando la descripción está visible */
+}
+
+.skill-card.active .skill-description {
+    max-height: 200px; /* Ajusta si tu descripción es más larga */
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Media Queries para tarjetas individuales */
+@media (max-width: 600px) {
+  .skill-card {
+    min-height: 60px; /* Aún más pequeña en móviles si es necesario */
+    padding: 10px;
+  }
+  .skill-logo {
+    width: 35px;
+    height: 35px;
+    margin-right: 8px;
+  }
+  .skill-name {
+    font-size: 0.9em;
+  }
+  .skill-toggle-arrow {
+    font-size: 0.8em;
+    margin-left: 8px;
+  }
+  .skill-description {
+    font-size: 0.8em;
+  }
+}

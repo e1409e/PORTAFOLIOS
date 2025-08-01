@@ -1,0 +1,291 @@
+/* src/styles/projects/ProjectCard.css */
+
+/* Contenedor principal de la tarjeta de proyecto */
+.project-card {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    align-items: stretch; /* Asegura que ambos contenedores se estiren a la misma altura */
+    max-width: 1000px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #f5f5f5;
+    font-family: 'Hack Nerd Font', monospace;
+    padding: 0;
+    position: relative; /* Necesario para el posicionamiento de los hijos si se añaden elementos absolutos */
+}
+
+/* Contenedor de la imagen y los enlaces (parte izquierda, siempre visible) */
+.project-media-container {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 300px; /* Ancho fijo para el contenedor de la imagen */
+    min-height: 500px; /* Mantiene la altura mínima del contenedor */
+    min-width: 300px; /* Asegura el ancho mínimo */
+    background-color: #22262b; /* Color de fondo unificado con la sección de detalles */
+    border: 2px solid white;
+    border-radius: 10px 0 0 10px; /* Bordes redondeados solo a la izquierda */
+    box-shadow: 0 10px 10px rgba(39, 39, 39, 0.2);
+    box-sizing: border-box;
+    padding: 0;
+    z-index: 1; /* Asegura que esté por encima de otros elementos si se superponen */
+}
+
+/* Contenedor para la imagen y su padding */
+.project-image-content {
+    flex: 1; /* Permite que este contenedor ocupe la mayor parte del espacio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px; /* Padding interno alrededor de la imagen */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Nuevo contenedor interactivo para la imagen y el icono de lupa */
+.project-image-interactive {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Overlay con el icono de lupa */
+.zoom-icon-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente al hacer hover */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.3s ease;
+    border-radius: 8px; /* Mismo radio que la imagen */
+}
+
+.project-image-interactive:hover .zoom-icon-overlay {
+    opacity: 1; /* Se muestra al hacer hover */
+}
+
+.zoom-icon {
+    width: 50px; /* Tamaño del icono de lupa */
+    height: 50px;
+    color: rgb(241, 187, 10); /* Color del icono */
+}
+
+/* Para centrar la imagen si es más pequeña que el contenedor */
+.project-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.project-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 270px;
+    object-fit: contain;
+    border-radius: 8px;
+    /* Asegura que la imagen no se superponga al overlay de la lupa */
+    display: block; 
+}
+
+/* Estilos para los enlaces (botón de GitHub, etc.) */
+.project-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px; /* Espacio entre los botones */
+    padding: 15px; /* Padding alrededor de los botones */
+    box-sizing: border-box;
+    border-top: 1px solid #444; /* Separador */
+}
+
+.project-link {
+    background-color: rgb(241, 187, 10);
+    color: #30363c;
+    padding: 8px 18px; 
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95em; /* Tamaño de fuente ligeramente más pequeño */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background-color 0.3s, transform 0.2s;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+    width: 80%; /* Ancho fijo para los botones, ajusta según sea necesario */
+    max-width: 200px; /* Limita el ancho máximo */
+    text-align: center;
+}
+
+.project-link:hover {
+    background-color: #e0ac00;
+    transform: translateY(-2px);
+}
+
+/* Contenedor principal para la sección de detalles (parte derecha, siempre visible) */
+.project-details-wrapper {
+    flex: 1; /* Permite que ocupe el espacio restante */
+    background-color: #22262b; /* Color de fondo unificado con la sección de medios */
+    border: 2px solid white;
+    border-radius: 0 10px 10px 0; /* Bordes redondeados solo a la derecha */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden; /* Mantiene el contenido dentro de sus límites */
+    opacity: 1; 
+    border-left: none; /* Elimina el borde izquierdo para fusionarse con la sección de medios */
+}
+
+/* El contenido siempre está visible */
+.project-details-content {
+    padding: 25px; /* Padding interno para el contenido */
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%; /* Mantiene la altura del contenedor */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 1; /* Siempre visible */
+    pointer-events: auto; /* Habilita interacciones */
+    user-select: none; 
+    -webkit-user-select: none; /* Para Safari */
+    -moz-user-select: none;    /* Para Firefox */
+    -ms-user-select: none;     /* Para Internet Explorer/Edge */
+}
+
+/* Estilos para el recuadro del título (dentro de project-details-content) */
+.project-title-box {
+    background-color: #30363c;
+    padding: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.project-title {
+    font-size: 1.5em;
+    color: rgb(241, 187, 10);
+    margin: 0;
+}
+
+.project-description {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.project-tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: #444;
+    border-radius: 5px;
+    transition: transform 0.2s ease;
+}
+
+.tech-icon-wrapper:hover {
+    transform: translateY(-2px);
+}
+
+.tech-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* Estilos para el MODAL de imagen a pantalla completa */
+.image-modal-overlay {
+    position: fixed; /* Fijo en la ventana, no en el flujo del documento */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ancho completo del viewport */
+    height: 100vh; /* Alto completo del viewport */
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque opcional */
+    animation: fadeIn 0.3s ease-out; /* Animación de aparición */
+}
+
+.image-modal-content {
+    position: relative; /* Para posicionar el botón de cerrar */
+    max-width: 90%; /* Limita el ancho máximo del contenido del modal */
+    max-height: 90%; /* Limita el alto máximo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #22262b; /* Color de fondo del modal, igual que la tarjeta */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    box-sizing: border-box;
+    animation: scaleIn 0.3s ease-out; /* Animación de escala */
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Asegura que la imagen se ajuste dentro del modal */
+    border-radius: 8px;
+}
+
+.close-modal-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 2.5em; /* Tamaño grande para la 'x' */
+    color: black;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50%;
+    line-height: 1; /* Ajusta la altura de línea para centrar la 'x' */
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    z-index: 1001; /* Por encima de la imagen del modal */
+}
+
+.close-modal-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg); /* Pequeña animación al cerrar */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

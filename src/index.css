@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Hack Nerd Font';
+  src: url('/src/assets/fonts/HackNerdFont-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hack Nerd Font';
+  src: url('/src/assets/fonts/HackNerdFont-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Reseteo básico para eliminar márgenes y paddings por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Permite una transicion suave entre secciones de la misma pagina*/
+html{
+  scroll-behavior: smooth;
+}
+/* Asegurar que html y body ocupen toda la altura del viewport */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Hack Nerd Font', monospace;
+  line-height: 1.6;
+}
+
+/* Aquí es donde agregas el color base al body */
+body {
+  background-color: #30363c; /* Un gris muy claro, suave y moderno */
+  color: #333; /* Color de texto general para todo el body */
+}
+
+/* Asegurar que el div #root (donde se monta tu app React) también ocupe toda la altura */
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+/* Tus estilos específicos para .home-section y h1, etc., en HomeSection.css */

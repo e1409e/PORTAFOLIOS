@@ -1,0 +1,111 @@
+/* src/styles/AboutSection.css */
+
+.about-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #30363c; /* <<<<<< NUEVO COLOR DE FONDO >>>>>> */
+  color: #f5f5f5;
+  box-sizing: border-box;
+  user-select: none; 
+    -webkit-user-select: none; /* Para Safari */
+    -moz-user-select: none;    /* Para Firefox */
+    -ms-user-select: none;     /* Para Internet Explorer/Edge */
+}
+
+.section-title {
+  font-family: 'Hack Nerd Font', 'Courier New', Courier, monospace;
+  font-size: 4vw;
+  color: rgb(241, 187, 10);
+  margin-bottom: 50px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.categories-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 40px;
+    width: 100%;
+    max-width: 1500px;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: start;
+}
+
+.category-block {
+    background-color: #22262b;
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 400px; /* Mantén o ajusta según la cantidad de tarjetas por categoría */
+}
+
+.category-title {
+  font-family: 'Hack Nerd Font', monospace;
+  font-size: 2em;
+  color: rgb(241, 187, 10);
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skill-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+    align-items: start;
+}
+
+/* =========================== */
+/* Media Queries */
+/* =========================== */
+
+@media (max-width: 900px) {
+  .section-title {
+    font-size: 7vw;
+  }
+  .categories-container {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 30px;
+  }
+  .category-block {
+    padding: 25px 20px;
+    min-height: auto;
+  }
+  .category-title {
+    font-size: 1.8em;
+  }
+  .skill-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 5px; 
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 10vw;
+  }
+  .categories-container {
+    gap: 20px;
+  }
+  .category-title {
+    font-size: 1.6em;
+  }
+}

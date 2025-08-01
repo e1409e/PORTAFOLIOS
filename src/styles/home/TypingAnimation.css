@@ -1,0 +1,20 @@
+.typing-text {
+  display: inline-block; /* Necesario para que el span se comporte como una caja para el cursor */
+}
+
+.blinking-cursor {
+  font-weight: 100; /* Hace que el cursor sea más delgado */
+  font-size: 1.2em; /* Tamaño del cursor, relativo al texto adyacente */
+  animation: blink-caret 0.75s step-end infinite; /* Animación de parpadeo */
+}
+
+/* Keyframes para la animación del cursor */
+@keyframes blink-caret {
+  from, to { border-color: transparent; } /* Invisible */
+  50% { border-color: white; } /* Visible (ajusta el color a tu gusto) */
+}
+
+/* Puedes ajustar el color y otros estilos del cursor */
+.blinking-cursor {
+    color: rgb(241, 187, 10); /* Que coincida con el color de tu h1, por ejemplo */
+}
