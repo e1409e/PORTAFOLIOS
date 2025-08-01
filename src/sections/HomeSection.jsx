@@ -65,7 +65,7 @@ export const HomeSection = () => {
         </p>
         <div className="cta-buttons">
           <a
-            href="src/assets/pdf/ERIC_CHAPARRO_CV.pdf"
+            href="/ERIC_CHAPARRO_CV.pdf"
             download="ERIC_CHAPARRO_CV.pdf"
             className="button primary-button"
           >
