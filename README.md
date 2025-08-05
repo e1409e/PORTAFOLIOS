@@ -1,59 +1,65 @@
 # Eric Chaparro - Portafolio Profesional
 
-Este proyecto es un portafolio profesional desarrollado con **React** y **Vite**. Incluye secciones de presentación, habilidades, proyectos y más, con un diseño moderno y responsivo.
+<div align="center">
+  <h1>👨‍💻 Eric Chaparro | Portafolio Profesional</h1>
+  <p>Bienvenido a mi portafolio. Aquí muestro mis habilidades, experiencia y proyectos destacados como desarrollador.</p>
+</div>
 
-## Estructura del Proyecto
+---
+
+## 🛠️ Tecnologías principales
+
+- <strong>React</strong> + <strong>Vite</strong> (SPA moderna y rápida)
+- <strong>CSS Modules</strong> (estilos organizados por sección)
+- <strong>Hack Nerd Font</strong> (branding personalizado)
+- <strong>SVG Icons</strong> (tecnologías y herramientas)
+- <strong>Responsive Design</strong> (adaptable a cualquier dispositivo)
+
+## 📂 Estructura del proyecto
 
 ```
 Eric_Portafolios/
-│
-├── index.html                # Archivo principal HTML, punto de entrada de la app
-├── package.json              # Configuración de dependencias y scripts del proyecto
-├── vite.config.js            # Configuración de Vite para desarrollo y build
-├── README.md                 # Documentación y guía del proyecto
-├── eslint.config.js          # Configuración de reglas de linting
-│
-├── src/                      # Carpeta principal de código fuente
-│   ├── App.jsx               # Componente raíz de la aplicación React
-│   ├── main.jsx              # Punto de entrada de React, renderiza App
-│   ├── index.css             # Estilos globales y fuentes
-│   ├── assets/               # Recursos estáticos (imágenes, íconos, fuentes, PDF)
-│   │   ├── fonts/            # Fuentes personalizadas usadas en el proyecto
-│   │   ├── icons/            # Íconos SVG para tecnologías y branding
-│   │   ├── images/           # Imágenes de proyectos y perfil
-│   │   └── pdf/              # Archivos PDF (ejemplo: CV)
-│   ├── components/           # Componentes reutilizables y específicos por sección
-│   │   ├── about/            # Componentes para la sección 'Sobre mí'
-│   │   ├── footer/           # Componentes para el pie de página
-│   │   ├── home/             # Componentes para la sección principal
-│   │   ├── navbar/           # Componentes para la barra de navegación
-│   │   ├── projects/         # Componentes para mostrar proyectos
-│   │   └── ScrollDownArrow.jsx # Componente reutilizable de flecha para scroll
-│   ├── sections/             # Secciones principales del portafolio (Home, About, Projects, Footer)
-│   ├── styles/               # Archivos CSS organizados por sección y componente
-│   │   ├── about/            # Estilos para la sección 'Sobre mí'
-│   │   ├── footer/           # Estilos para el pie de página
-│   │   ├── home/             # Estilos para la sección principal
-│   │   ├── navbar/           # Estilos para la barra de navegación
-│   │   ├── projects/         # Estilos para la sección de proyectos
-│   └── utils/                # Utilidades y funciones auxiliares (actualmente vacío)
+├── src/
+│   ├── assets/         # Imágenes, íconos, fuentes, PDF
+│   ├── components/     # Componentes reutilizables
+│   ├── sections/       # Secciones principales (Home, About, Projects, Footer)
+│   ├── styles/         # CSS por sección y componente
+│   └── utils/          # Utilidades
+├── index.html
+├── package.json
+├── vite.config.js
+├── README.md
+└── eslint.config.js
 ```
 
-## Scripts principales
+## 🖼️ Vista previa
 
-- `npm run dev` - Inicia el servidor de desarrollo con recarga en caliente.
-- `npm run build` - Genera la versión de producción.
-- `npm run preview` - Previsualiza la build de producción localmente.
+<img src="src/assets/images/portfolio_screenshot.png" alt="Portfolio Screenshot" width="600" />
 
-## Tecnologías principales
+## 📌 Funcionalidades
 
-- **React** (Vite)
-- **CSS Modules** (organización por secciones)
-- **Hack Nerd Font** (fuente personalizada)
-- **SVG Icons** para tecnologías
+- Presentación personal y profesional
+- Sección de habilidades y tecnologías
+- Proyectos destacados con detalles y enlaces
+- Animaciones y componentes interactivos
+- Diseño moderno y adaptable
 
-## Autor
+## 📄 CV
 
-Eric Chaparro
+Descarga mi CV en PDF desde la sección principal del portafolio o directamente aquí:
+[Descargar CV](src/assets/pdf/ERIC_CHAPARRO_CV.pdf)
+
+## 🌐 Demo
+
+Prueba el portafolio en vivo:
+[Ver Demo](https://portafolios-ericchaparro.vercel.app/) 
+
+## 📫 Contacto
+
+¿Te gustaría trabajar conmigo o tienes alguna consulta?
+Puedes contactarme a través del portafolio o por correo:
+**ericchaparro1409@gmail.com** 
 
 ---
+
+> Este portafolio está construido con pasión y dedicación. ¡Gracias por visitar mi perfil!

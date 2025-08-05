@@ -57,11 +57,7 @@ export const HomeSection = () => {
           <TypingAnimation />
         </h1>
         <p className="description-text">
-          Ingeniero de Sistemas con sólida especialización en desarrollo web
-          Full Stack y Android, con conocimiento avanzado en el lado del
-          backend. Domino múltiples lenguajes de programación y manejo
-          frameworks como Node.js, Flutter y React, teniendo una alta
-          experiencia construyendo soluciones robustas y escalables.
+          Ingeniero de Sistemas especializado en desarrollo web Full Stack y aplicaciones Android, con experiencia avanzada en backend. Domino múltiples lenguajes de programación y frameworks como Node.js, Flutter y React, lo que me permite construir soluciones robustas, escalables y adaptadas a las necesidades de cada proyecto.
         </p>
         <div className="cta-buttons">
           <a
