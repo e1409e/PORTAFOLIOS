@@ -42,7 +42,7 @@ export const ProjectsSection = () => {
       imageSrc: portfolioScreenshot,
       technologies: ["React", "JavaScript", "HTML", "CSS"],
       links: {
-        github: "https://github.com/e1409e/your-portfolio-repo",
+        github: "https://github.com/e1409e/PORTAFOLIOS",
       },
     },
   ];

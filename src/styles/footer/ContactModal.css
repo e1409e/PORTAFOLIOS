@@ -1,35 +1,35 @@
 /* src/styles/footer/ContactModal.css */
 
 .modal-overlay {
-    position: fixed; /* Fijo en la ventana, no en el flujo del documento */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Ancho completo del viewport */
-    height: 100vh; /* Alto completo del viewport */
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Asegura que esté por encima de todo */
-    backdrop-filter: blur(5px); /* Efecto de desenfoque opcional */
-    animation: fadeIn 0.3s ease-out; /* Animación de aparición */
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-out;
 }
 
 .modal-content {
-    position: relative; /* Para posicionar el botón de cerrar */
-    background-color: #22262b; /* Un color oscuro para el modal, coherente con las tarjetas */
+    position: relative;
+    background-color: #22262b;
     border-radius: 10px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     padding: 30px;
     width: 90%;
-    max-width: 450px; /* Ancho máximo para el modal */
+    max-width: 450px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    animation: scaleIn 0.3s ease-out; /* Animación de escala */
-    color: #f5f5f5; /* Color de texto claro */
+    animation: scaleIn 0.3s ease-out;
+    color: #f5f5f5;
     font-family: 'Hack Nerd Font', monospace;
 }
 
@@ -39,17 +39,17 @@
     right: 10px;
     background: none;
     border: none;
-    font-size: 2.2em; /* Tamaño grande para la 'x' */
+    font-size: 2.2em;
     color: #f5f5f5;
     cursor: pointer;
     padding: 5px;
-    line-height: 1; /* Ajusta la altura de línea para centrar la 'x' */
+    line-height: 1;
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .close-modal-button:hover {
-    color: rgb(241, 187, 10); /* Color de acento al pasar el mouse */
-    transform: rotate(90deg); /* Pequeña animación al cerrar */
+    color: rgb(241, 187, 10);
+    transform: rotate(90deg);
 }
 
 .modal-title {
@@ -68,26 +68,29 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    background-color: #30363c; /* Fondo para el valor de contacto */
+    background-color: #30363c;
     border-radius: 5px;
     padding: 10px 15px;
     margin-bottom: 25px;
     width: 100%;
     max-width: 400px;
     box-sizing: border-box;
-    overflow-wrap: break-word; /* Rompe palabras largas si es necesario */
 }
 
 .contact-value-display {
-    flex-grow: 1; /* Permite que el texto ocupe el espacio disponible */
+    flex-grow: 1;
     font-size: 1.1em;
     font-weight: bold;
     color: #f5f5f5;
-    /* Evita que el texto sea seleccionable o copiable directamente con el mouse */
-    user-select: none; 
-    -webkit-user-select: none; /* Para Safari */
-    -moz-user-select: none;    /* Para Firefox */
-    -ms-user-select: none;     /* Para Internet Explorer/Edge */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    /* ESTOS ESTILOS ARREGLAN EL PROBLEMA DE RESPONSIVIDAD */
+    white-space: nowrap; /* Evita que el texto salte a una nueva línea */
+    overflow: hidden; /* Oculta el texto que se desborda */
+    text-overflow: ellipsis; /* Muestra puntos suspensivos para el texto oculto */
+    min-width: 0; /* Permite que el flex item se encoja por debajo de su tamaño de contenido */
 }
 
 .copy-button {
@@ -99,6 +102,7 @@
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease, opacity 0.2s ease;
+    flex-shrink: 0; /* Evita que el botón se encoja en pantallas pequeñas */
 }
 
 .copy-button:hover {
@@ -107,20 +111,19 @@
 }
 
 .copy-icon {
-    width: 25px; /* Tamaño del icono de copiar */
+    width: 25px;
     height: 25px;
-    filter: invert(1); /* Hace el icono blanco si es negro por defecto */
+    filter: invert(1);
 }
 
-
-/* --- Estilos para los botones (copiados de tu ejemplo) --- */
+/* --- Estilos para los botones --- */
 .cta-buttons {
     display: flex;
     gap: 20px;
-    margin-top: 20px; /* Ajustado para el modal */
+    margin-top: 20px;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%; /* Para que los botones se adapten al ancho del modal */
+    width: 100%;
 }
 
 .button {
@@ -133,7 +136,7 @@
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    flex-shrink: 0; /* Evita que los botones se encojan en demasía */
+    flex-shrink: 0;
 }
 
 .primary-button {

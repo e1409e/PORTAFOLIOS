@@ -1,86 +1,119 @@
 .navbar {
-    position: fixed; /* Lo hace fijo en la parte superior */
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #2a2e34; /* Un color oscuro similar al fondo del body pero ligeramente diferente para que se distinga */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para darle profundidad */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos al hacer scroll */
-    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
-    padding: 15px 0;
-    user-select: none; 
-    -webkit-user-select: none; /* Para Safari */
-    -moz-user-select: none;    /* Para Firefox */
-    -ms-user-select: none;     /* Para Internet Explorer/Edge */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #2a2e34;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+  padding: 15px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .navbar-container {
-    max-width: 1200px; /* Ancho máximo del contenido del navbar para pantallas grandes */
-    margin: 0 auto; /* Centra el contenido */
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between; /* Espacia el logo y los enlaces */
-    align-items: center; /* Alinea verticalmente el logo y los enlaces */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar-logo {
-    display: flex; 
-    align-items: center;
-    text-decoration: none;
-    height: 50px; /* <--- AJUSTA ESTA ALTURA. Define la altura máxima del logo. */
-    width: auto; /* <--- Asegura que el contenedor del logo no se estire horizontalmente. */
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 50px;
+  width: auto;
 }
 
 .logo-svg {
-    height: 100%; /* <--- Ocupa el 100% de la altura de su contenedor (.navbar-logo) */
-    width: auto; /* <--- Permite que el ancho se ajuste automáticamente, manteniendo la relación de aspecto. */
+  height: 100%;
+  width: auto;
 }
+
+/* Links de navegación de escritorio */
 .nav-links {
-    list-style: none; /* Elimina los puntos de la lista */
-    display: flex;
-    gap: 30px; /* Espacio entre los enlaces */
-    margin: 0; /* Asegura que no tenga márgenes */
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-item {
-    font-family: 'Hack Nerd Font', monospace;
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: #f5f5f5; /* Color del texto del enlace, un gris claro */
-    text-decoration: none; /* Elimina el subrayado */
-    transition: color 0.3s ease;
-    position: relative;
+  font-family: 'Hack Nerd Font', monospace;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #f5f5f5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
 }
 
 .nav-item:hover {
-    color: rgb(241, 187, 10); /* Color de acento al pasar el mouse */
+  color: rgb(241, 187, 10);
 }
 
-/* Opcional: línea inferior al pasar el mouse */
 .nav-item::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: rgb(241, 187, 10);
-    transition: width 0.3s ease;
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(241, 187, 10);
+  transition: width 0.3s ease;
 }
 
 .nav-item:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
-/* Media Queries para responsividad */
+/* Oculta el botón de hamburguesa por defecto */
+.hamburger-menu {
+  display: none;
+}
+
+/* Media Query para móviles */
 @media (max-width: 768px) {
-    .navbar-container {
-        padding: 0 15px;
-    }
-    .nav-links {
-        gap: 15px; /* Reduce el espacio entre enlaces en pantallas más pequeñas */
-    }
-    .nav-item {
-        font-size: 0.9rem; /* Reduce el tamaño de la fuente */
-    }
+  /* Oculta los links de navegación de escritorio en móviles */
+  .nav-links {
+    display: none;
+  }
+
+  /* Muestra el botón de hamburguesa en móviles */
+  .hamburger-menu {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+  }
+
+  .hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #f5f5f5;
+    margin: 5px 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  /* Animación del ícono de hamburguesa para la "X" */
+  .hamburger-menu.open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../styles/home/TypingAnimation.css"; // Para los estilos de la animación
 
 export const TypingAnimation = () => {
-  const phrases = ["Eric Chaparro", "Dev Full Stack"]; // Frases a alternar
+  const phrases = ["Eric Chaparro", "Dev FullStack"]; // Frases a alternar
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);

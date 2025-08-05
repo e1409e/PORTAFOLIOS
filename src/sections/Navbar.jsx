@@ -1,18 +1,17 @@
-// src/sections/Navbar.jsx
-
+// src/components/navbar/Navbar.jsx
 import React from "react";
-import "../styles/navbar/NavbarSection.css"; // Archivo de estilos que crearemos a continuación
-import Logo from "../assets/icons/LogoEC2.svg?react"; 
-export const Navbar = () => {
+import "../styles/navbar/NavbarSection.css";
+import Logo from "../assets/icons/LogoEC2.svg?react";
+
+export const Navbar = ({ isMenuOpen, onMenuToggle }) => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Logo SVG */}
         <a href="#home" className="navbar-logo">
           <Logo className="logo-svg" />
         </a>
 
-        {/* Enlaces de navegación */}
+        {/* Links de escritorio, se ocultan en móviles */}
         <ul className="nav-links">
           <li>
             <a href="#home" className="nav-item">
@@ -35,6 +34,17 @@ export const Navbar = () => {
             </a>
           </li>
         </ul>
+
+        {/* Botón de menú de hamburguesa, solo visible en móviles */}
+        <button
+          className={`hamburger-menu ${isMenuOpen ? "open" : ""}`}
+          onClick={onMenuToggle}
+          aria-label="Toggle navigation menu"
+        >
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </button>
       </div>
     </nav>
   );

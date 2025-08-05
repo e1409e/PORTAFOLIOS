@@ -4,7 +4,7 @@
 .home-scaffold {
   display: flex;
   flex-direction: row;
-  justify-content: center; /* O 'start' */
+  justify-content: center;
   align-items: start;
   padding: 7vw;
   min-height: 100%;
@@ -21,7 +21,6 @@
   align-items: flex-start;
   max-width: 100vw;
   flex: 1;
-
 }
 
 /*Estilo para la seccion con el h1*/
@@ -52,10 +51,10 @@
   flex: 1;
   height: 452px; /* Asegura que sea un cuadrado para border-radius: 50% */
   max-width: 352px;
-  user-select: none; 
-    -webkit-user-select: none; /* Para Safari */
-    -moz-user-select: none;    /* Para Firefox */
-    -ms-user-select: none;     /* Para Internet Explorer/Edge */
+  user-select: none;
+  -webkit-user-select: none; /* Para Safari */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para Internet Explorer/Edge */
 }
 
 .profile-image {
@@ -63,30 +62,28 @@
   height: 450px; /* Asegura que sea un cuadrado para border-radius: 50% */
   border-radius: 30% 10% 30% 10%; /* Para hacerla circular */
   object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
-  /* border: 2px solid rgb(241, 187, 10); Borde alrededor de la imagen */
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra sutil */
 }
 
 /* Estilos para la flecha de desplazamiento */
 .scroll-down-arrow {
-  position: absolute; /* Posicionamiento absoluto para colocarla al final de la sección */
-  bottom: 5px; /* Distancia desde la parte inferior de la sección */
-  left: 50%; /* Centra horizontalmente */
-  transform: translateX(-50%); /* Ajuste fino para centrarla perfectamente */
-  font-size: 4em; /* Tamaño de la flecha */
-  color: rgb(241, 187, 10); /* Color de la flecha, el mismo que tu título */
-  text-decoration: none; /* Elimina el subrayado si es un enlace */
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4em;
+  color: rgb(241, 187, 10);
+  text-decoration: none;
   cursor: pointer;
-  animation: bounce 2s infinite; /* Aplica la animación de rebote */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Añade esta línea */
+  animation: bounce 2s infinite;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .hidden-arrow {
   opacity: 0;
   visibility: hidden;
-  pointer-events: none; /* Deshabilita clics cuando no es visible */
-  transform: translateY(20px) translateX(-50%); /* Oculta suavemente hacia abajo */
-  /* Asegúrate de que .scroll-down-arrow tenga una transición para la opacidad y el transform */
+  pointer-events: none;
+  transform: translateY(20px) translateX(-50%);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
@@ -97,13 +94,13 @@
   50%,
   80%,
   100% {
-    transform: translateY(0) translateX(-50%); /* Posición normal */
+    transform: translateY(0) translateX(-50%);
   }
   40% {
-    transform: translateY(-15px) translateX(-50%); /* Sube 15px */
+    transform: translateY(-15px) translateX(-50%);
   }
   60% {
-    transform: translateY(-8px) translateX(-50%); /* Baja 8px, para un efecto de rebote más suave */
+    transform: translateY(-8px) translateX(-50%);
   }
 }
 
@@ -136,30 +133,32 @@
   }
 }
 
-/* Media Queries para ajustar la flecha en pantallas pequeñas */
 @media (max-width: 600px) {
-  .scroll-down-arrow {
-    font-size: 2.5em; /* Tamaño más pequeño en móviles */
-    bottom: 20px; /* Más cerca del borde inferior */
-  }
-}
+  /* ESTILOS PARA PANTALLAS PEQUEÑAS (MÓVILES) - BLOQUE CONSOLIDADO */
 
-@media (max-width: 600px) {
-  /* Ajuste para pantallas pequeñas, como móviles */
+  /* Oculta el contenedor de la imagen para liberar espacio */
+  .home-image-container {
+    display: none;
+  }
+
   .home-scaffold {
-    padding: 15vw 5vw; /* Más padding aún en pantallas muy pequeñas */
+    flex-direction: column; /* Apila el contenido en columna */
+    padding: 25vw 5vw; /* Más padding vertical en móviles */
+    gap: 40px; /* Ajusta el espacio */
+    position: relative;
   }
 
   .home-title {
-    font-size: 10vw; /* Título aún más grande */
+    font-size: 10vw;
   }
 
   .description-text {
-    font-size: 4vw; /* Párrafo más grande */
+    font-size: 4vw;
+    text-align: start;
   }
 
-  .profile-image {
-    width: 280px;
-    height: 280px;
+  .scroll-down-arrow {
+    font-size: 2.5em;
+    bottom: 20px;
   }
 }

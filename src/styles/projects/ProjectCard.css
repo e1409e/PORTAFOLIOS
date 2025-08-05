@@ -289,3 +289,50 @@
     from { transform: scale(0.9); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
+
+/* Media Query para pantallas más pequeñas (tablets y móviles) */
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column; /* Apila los elementos verticalmente */
+    max-width: 100%;
+    margin: 0 auto 40px auto;
+  }
+
+  /* El contenedor de los detalles ahora va primero */
+  .project-details-wrapper {
+    order: 1; /* Le damos un orden más bajo para que aparezca primero */
+    border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+    border-left: 2px solid white;
+    border-bottom: none; /* Quitamos el borde inferior que tenías antes */
+  }
+
+  /* El contenedor de la imagen va al final */
+  .project-media-container {
+    order: 2; /* Le damos un orden más alto para que aparezca después */
+    flex: 1 1 100%;
+    min-width: unset;
+    min-height: auto;
+    border-radius: 0 0 10px 10px; /* Bordes redondeados en la parte inferior */
+    border: none;
+    border-bottom: 2px solid white; /* Añadimos un borde superior para separarlo */
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    box-shadow: none;
+  }
+  
+  .project-image-content {
+    padding: 10px;
+  }
+
+  .project-image {
+    max-height: 250px;
+  }
+
+  .project-title {
+    font-size: 1.3em;
+  }
+
+  .project-description {
+    font-size: 0.9em;
+  }
+}
