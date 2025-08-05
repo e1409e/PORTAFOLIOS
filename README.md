@@ -47,7 +47,7 @@ Eric_Portafolios/
 ## 📄 CV
 
 Descarga mi CV en PDF desde la sección principal del portafolio o directamente aquí:
-[Descargar CV](src/assets/pdf/ERIC_CHAPARRO_CV.pdf)
+[Descargar CV](public/ERIC_CHAPARRO_CV.pdf)
 
 ## 🌐 Demo
 
